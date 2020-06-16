@@ -21,3 +21,6 @@ ctl.!default{
 	card 0
 }
 __EOF
+
+cp /usr/share/c4_amllibs/* /lib/firmware/video || true
+

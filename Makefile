@@ -1,7 +1,9 @@
 all:
-	cp -aRP lib/firmware/video/* /lib/firmware/video
+	mkdir -p /usr/share/c4_amllibs
+	cp lib/firmware/video/* /usr/share/c4_amllibs
 	cp -aRP usr/* /usr
 	
 install:
-	cp -aRP lib/firmware/video/* /lib/firmware/video
+	mkdir -p /usr/share/c4_amllibs
+	cp lib/firmware/video/* /usr/share/c4_amllibs
 	cp -aRP usr/* /usr
