@@ -1,0 +1,14 @@
+prefix=/srv/output/amffmpeg/host/aarch64-linux-gnu/sysroot/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavdevice
+Description: FFmpeg device handling library
+Version: 53.1.1
+Requires: 
+Requires.private: libavformat = 53.4.0
+Conflicts:
+Libs: -L${libdir} -lavdevice 
+Libs.private: -lasound -lm -lz
+Cflags: -I${includedir}

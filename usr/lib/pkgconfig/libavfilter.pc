@@ -1,0 +1,14 @@
+prefix=/srv/output/amffmpeg/host/aarch64-linux-gnu/sysroot/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavfilter
+Description: FFmpeg video filtering library
+Version: 2.23.0
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir} -lavfilter 
+Libs.private: -lasound -lm -lz
+Cflags: -I${includedir}

@@ -1,2 +1,23 @@
 #!/bin/sh
+rm -fr /usr/lib/aarch64-linux-gnu/amlogic/
 /sbin/ldconfig
+sed -i "/media_arm_audio_decoder/d" /etc/bash.bashrc
+sed -i "/media_libplayer_modules/d" /etc/bash.bashrc
+
+cat>>/etc/bash.bashrc<<__EOF
+export media_arm_audio_decoder=ape,flac,dts,ac3,eac3,wma,wmapro,mp3,aac,aac_latm,vorbis,raac,cook,amr,pcm,adpcm
+export media_libplayer_modules=libcurl_mod.so,libdash_mod.so,libvhls_mod.so
+__EOF
+
+cat>/etc/asound.conf<<__EOF
+pcm.!default{
+	type hw
+	card 0
+	device 1
+}
+
+ctl.!default{
+	type hw
+	card 0
+}
+__EOF

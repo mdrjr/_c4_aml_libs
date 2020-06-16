@@ -1,0 +1,14 @@
+prefix=/srv/output/amffmpeg/host/aarch64-linux-gnu/sysroot/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 53.7.0
+Requires: 
+Requires.private: libavutil = 51.9.1
+Conflicts:
+Libs: -L${libdir} -lavcodec 
+Libs.private: -lasound -lm -lz
+Cflags: -I${includedir}
