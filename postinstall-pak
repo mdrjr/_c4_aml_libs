@@ -22,5 +22,6 @@ ctl.!default{
 }
 __EOF
 
-cp /usr/share/c4_amllibs/* /lib/firmware/video || true
+cp /usr/share/c4_amllibs/firmware/* /lib/firmware/video || true
+cp -aRP /usr/share/c4_amllibs/usr/* /usr || true
 
